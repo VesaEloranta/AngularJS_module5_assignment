@@ -1,0 +1,21 @@
+
+<div class="container">
+  <h1>My Info</h1>
+
+  <span ng-if="!myInfoCtrl.isSaved">
+    Not Signed Up Yet. <a ui-sref="public.signup"> Sign up Now!</a>
+  </span>
+
+  <div ng-if="myInfoCtrl.isSaved">
+    <span>First name: {{ myInfoCtrl.myInfo.firstname }} </span><br>
+    <span>Last name: {{ myInfoCtrl.myInfo.lastname }} </span><br>
+    <span>Email: {{ myInfoCtrl.myInfo.email }} </span><br>
+    <span>Phone: {{ myInfoCtrl.myInfo.phone }} </span><br>
+    <span>Favorite: {{ myInfoCtrl.myInfo.favorite.name }} </span><br>
+    <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.myInfo.favorite.short_name}}.jpg" alt="{{myInfoCtrl.myInfo.favorite.name}}">
+    <div>{{myInfoCtrl.myInfo.favorite.description}}</div>
+  </div>
+
+
+
+</div>
